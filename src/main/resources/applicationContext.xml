@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+   http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/aop
+   http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+   http://www.springframework.org/schema/tx
+   http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <!-- 代表配置的对象都在这个包下 -->
+    <context:component-scan base-package="com.cj.pojo"/>
+
+    <!-- 表示使用注解方式配置-->
+    <!--<context:annotation-config/>-->
+
+    <!--<bean name="user" class="com.cj.pojo.User">-->
+        <!--<property name="userName" value="chenjian"/>-->
+    <!--</bean>-->
+    <!--<bean name="category" class="com.cj.pojo.Category">-->
+        <!--<property name="categoryName" value="shouji"/>-->
+    <!--</bean>-->
+    <!--<bean name="product" class="com.cj.pojo.Product">-->
+        <!--<property name="productName" value="xiaomi"/>-->
+        <!--&lt;!&ndash;<property name="category" ref="category"/>&ndash;&gt;-->
+    <!--</bean>-->
+
+</beans>
