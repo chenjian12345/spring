@@ -12,12 +12,18 @@
    http://www.springframework.org/schema/context
    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
+    <!-- 注解方式 -->
     <!-- 代表配置的对象都在这个包下 -->
     <context:component-scan base-package="com.cj.pojo"/>
+    <context:component-scan base-package="com.cj.service"/>
+    <context:component-scan base-package="com.cj.aspect"/>
+    <!-- 找到被注解的切面类，进行切面配置 -->
+    <aop:aspectj-autoproxy/>
 
     <!-- 表示使用注解方式配置-->
     <!--<context:annotation-config/>-->
 
+    <!-- 配置方式 -->
     <!--<bean name="user" class="com.cj.pojo.User">-->
         <!--<property name="userName" value="chenjian"/>-->
     <!--</bean>-->
@@ -26,7 +32,18 @@
     <!--</bean>-->
     <!--<bean name="product" class="com.cj.pojo.Product">-->
         <!--<property name="productName" value="xiaomi"/>-->
-        <!--&lt;!&ndash;<property name="category" ref="category"/>&ndash;&gt;-->
+        <!--<property name="category" ref="category"/>-->
     <!--</bean>-->
+
+    <!--<bean id="loggerAspect" class="com.cj.aspect.LoggerAspect"/>-->
+    <!--<aop:config>-->
+        <!--<aop:pointcut id="loggerCutpoint"-->
+                      <!--expression=-->
+                              <!--"execution(* com.cj.service.ProductService.*(..)) "/>-->
+
+        <!--<aop:aspect id="logAspect" ref="loggerAspect">-->
+            <!--<aop:around pointcut-ref="loggerCutpoint" method="log"/>-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
 
 </beans>
